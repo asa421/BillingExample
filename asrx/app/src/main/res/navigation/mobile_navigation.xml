@@ -3,23 +3,23 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_home">
+    app:startDestination="@+id/navigation_setting">
 
     <fragment
-        android:id="@+id/navigation_home"
-        android:name="su.salut.billingexample.ui.home.HomeFragment"
-        android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
+        android:id="@+id/navigation_setting"
+        android:name="su.salut.billingexample.ui.setting.SettingFragment"
+        android:label="@string/title_setting"
+        tools:layout="@layout/fragment_setting" />
 
     <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="su.salut.billingexample.ui.dashboard.DashboardFragment"
-        android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        android:id="@+id/navigation_products"
+        android:name="su.salut.billingexample.ui.products.ProductsFragment"
+        android:label="@string/title_products"
+        tools:layout="@layout/fragment_products" />
 
     <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="su.salut.billingexample.ui.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
+        android:id="@+id/navigation_purchases"
+        android:name="su.salut.billingexample.ui.purchases.PurchasesFragment"
+        android:label="@string/title_purchases"
+        tools:layout="@layout/fragment_purchases" />
 </navigation>
