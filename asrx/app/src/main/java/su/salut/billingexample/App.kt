@@ -7,6 +7,7 @@ class App : Application() {
 
     val settingsRepository: SettingsRepository by lazy(LazyThreadSafetyMode.NONE) {
         val config = object : SettingsRepository.Config {
+            override val productIds = BuildConfig.PRODUCT_IDS.toList()
             override val applicationId = BuildConfig.APPLICATION_ID
         }
 

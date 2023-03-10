@@ -14,9 +14,14 @@ class SettingsViewModel(
     private val settingsRepository: SettingsRepository
 ) : ViewModel() {
 
+    private val _productIds = MutableLiveData<List<String>>().apply {
+        value = settingsRepository.getProductIds()
+    }
     private val _applicationId = MutableLiveData<String>().apply {
         value = settingsRepository.getApplicationId()
     }
+
+    val productIds: LiveData<List<String>> = _productIds
     val applicationId: LiveData<String> = _applicationId
 
     companion object {
