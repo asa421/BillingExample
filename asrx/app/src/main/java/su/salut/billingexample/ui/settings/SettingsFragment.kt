@@ -1,4 +1,4 @@
-package su.salut.billingexample.ui.setting
+package su.salut.billingexample.ui.settings
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,12 +6,14 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
-import su.salut.billingexample.databinding.FragmentSettingBinding
+import androidx.fragment.app.viewModels
+import su.salut.billingexample.databinding.FragmentSettingsBinding
 
-class SettingFragment : Fragment() {
+class SettingsFragment : Fragment() {
 
-    private var _binding: FragmentSettingBinding? = null
+    private val settingsViewModel: SettingsViewModel by viewModels { SettingsViewModel.factory }
+
+    private var _binding: FragmentSettingsBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -22,14 +24,12 @@ class SettingFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val settingViewModel =
-            ViewModelProvider(this).get(SettingViewModel::class.java)
-
-        _binding = FragmentSettingBinding.inflate(inflater, container, false)
+        _binding = FragmentSettingsBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
+
         val textView: TextView = binding.textHome
-        settingViewModel.text.observe(viewLifecycleOwner) {
+        settingsViewModel.applicationId.observe(viewLifecycleOwner) {
             textView.text = it
         }
         return root

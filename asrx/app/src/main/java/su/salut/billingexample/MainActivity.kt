@@ -13,7 +13,7 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
     private val topLevelDestinationIds = setOf(
-        R.id.navigation_setting, R.id.navigation_products, R.id.navigation_purchases
+        R.id.navigation_settings, R.id.navigation_products, R.id.navigation_purchases
     )
 
     override fun onCreate(savedInstanceState: Bundle?) {
