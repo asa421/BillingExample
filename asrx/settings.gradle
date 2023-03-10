@@ -12,5 +12,6 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
-rootProject.name = "Billing Example"
+rootProject.name = "BillingExample"
 include ':app'
+include ':domain'
