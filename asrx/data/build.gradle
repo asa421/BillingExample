@@ -46,5 +46,8 @@ dependencies {
     // (see https://github.com/ReactiveX/RxJava/releases for latest 3.x.x version)
     implementation 'io.reactivex.rxjava3:rxjava:3.1.6'
 
+    // https://help.rustore.ru/rustore/for_developers/developer-documentation/sdk_payments/SDK-connecting-payments/quick_start
+    api 'ru.rustore.sdk:billingclient:0.1.6'
+
     implementation project(path: ':domain')
 }
