@@ -18,6 +18,13 @@ import su.salut.billingexample.lib.googleplay.mapToException
 /**
  * We work with the Google billing system.
  *
+ * The peculiarity is that for billing you need to pass Activity.
+ * We get around this by initializing the lambda function for billing.
+ *
+ * Before a request, it is better to initialize and check the availability of the billing system,
+ * so all requests start with [BillingClientWrapper::startConnectionAsCompletable].
+ * The Google billing system caches the initialization and the request is executed instantly.
+ *
  * @date 03.02.2023
  * @author asa421
  * @link https://developer.android.com/google/play/billing/integrate

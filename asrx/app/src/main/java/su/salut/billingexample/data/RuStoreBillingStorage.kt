@@ -22,6 +22,10 @@ import su.salut.billingexample.lib.rustore.BillingClientWrapperWithPurchaseListe
 /**
  * We work with the RuStore billing system.
  *
+ * The keystore signature must match the signature that was used to sign the application
+ * published in the RuStore Console system. Make sure the buildType being used (ex. debug)
+ * uses the same signature as the published application (ex. release).
+ *
  * Unfortunately, the system does not support query caching, which leads to errors.
  * To solve the problem, we first use the [BillingClientWrapperWithCaching] wrapper.
  * And then we use the [BillingClientWrapperWithPurchaseListener] wrapper to track purchases,
@@ -29,9 +33,12 @@ import su.salut.billingexample.lib.rustore.BillingClientWrapperWithPurchaseListe
  *
  * The feature, besides the lack of caching and the purchase listener,
  * is the creation of a purchase even when simply invoiced. And if the user canceled the purchase,
- * you need to delete it, otherwise it hangs pending. To do this,
- * the purchase is marked as requiring confirmation and at the moment
- * of confirmation of the purchase, it is either awaited or confirmed.
+ * you need to delete she, otherwise she hangs pending. To do this,
+ * the purchase is marked as requiring confirmation and at the right time,
+ * she is either deleted or confirmed.
+ *
+ * Also, for a successful return to the application,
+ * you need to return the intent to the billing system!
  *
  * @date 03.03.2023
  * @author asa421

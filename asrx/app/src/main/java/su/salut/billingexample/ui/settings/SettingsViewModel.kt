@@ -4,21 +4,22 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.ViewModelProvider.AndroidViewModelFactory.Companion.APPLICATION_KEY
 import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
 import su.salut.billingexample.App
-import su.salut.billingexample.repository.SettingsRepository
+import su.salut.billingexample.domain.usecase.GetApplicationIdUseCase
+import su.salut.billingexample.domain.usecase.GetProductIdsUseCase
 
 class SettingsViewModel(
-    private val settingsRepository: SettingsRepository
+    private val getProductIdsUseCase: GetProductIdsUseCase,
+    private val getApplicationIdUseCase: GetApplicationIdUseCase
 ) : ViewModel() {
 
     private val _productIds = MutableLiveData<List<String>>().apply {
-        value = settingsRepository.getProductIds()
+        value = getProductIdsUseCase.execute()
     }
     private val _applicationId = MutableLiveData<String>().apply {
-        value = settingsRepository.getApplicationId()
+        value = getApplicationIdUseCase.execute()
     }
 
     val productIds: LiveData<List<String>> = _productIds
@@ -27,9 +28,12 @@ class SettingsViewModel(
     companion object {
         val factory: ViewModelProvider.Factory = viewModelFactory {
             initializer {
-                val settingsRepository = (this[APPLICATION_KEY] as App).settingsRepository
+                val app = (this[ViewModelProvider.AndroidViewModelFactory.APPLICATION_KEY] as App)
 
-                return@initializer SettingsViewModel(settingsRepository = settingsRepository)
+                return@initializer SettingsViewModel(
+                    getProductIdsUseCase = app.factoryGetProductIdsUseCase(),
+                    getApplicationIdUseCase = app.factoryGetApplicationIdUseCase()
+                )
             }
         }
     }

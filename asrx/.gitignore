@@ -10,6 +10,9 @@
 .DS_Store
 /build
 /captures
+/config/keystore
+/config/keystore.rustore
+/config/keystore.properties
 .externalNativeBuild
 .cxx
 local.properties

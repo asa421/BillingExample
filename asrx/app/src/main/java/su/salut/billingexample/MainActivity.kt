@@ -1,6 +1,8 @@
 package su.salut.billingexample
 
+import android.content.Intent
 import android.os.Bundle
+import androidx.activity.viewModels
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.NavHostFragment
@@ -8,8 +10,11 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import su.salut.billingexample.databinding.ActivityMainBinding
+import su.salut.billingexample.lib.manager.BillingManager
 
 class MainActivity : AppCompatActivity() {
+
+    private val mainViewModel: MainViewModel by viewModels { MainViewModel.factory }
 
     private lateinit var binding: ActivityMainBinding
     private val topLevelDestinationIds = setOf(
@@ -18,6 +23,10 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        if (savedInstanceState == null) {
+            BillingManager.onNewIntent(intent) // For a successful return to the application!
+        }
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -31,5 +40,16 @@ class MainActivity : AppCompatActivity() {
         val appBarConfiguration = AppBarConfiguration(topLevelDestinationIds)
         setupActionBarWithNavController(navHostFragment.navController, appBarConfiguration)
         navView.setupWithNavController(navHostFragment.navController)
+    }
+
+    override fun onNewIntent(intent: Intent?) {
+        super.onNewIntent(intent)
+        BillingManager.onNewIntent(intent) // For a successful return to the application!
+    }
+
+    override fun onResume() {
+        super.onResume()
+        // Perhaps the purchase was confirmed while the application was turned off!
+        mainViewModel.onUpdateActivePurchases()
     }
 }

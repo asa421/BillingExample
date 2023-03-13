@@ -3,6 +3,13 @@ plugins {
     id 'org.jetbrains.kotlin.android'
 }
 
+def keystorePropertiesDir = rootProject.file("${rootDir}/config")
+def keystorePropertiesFile = rootProject.file("${keystorePropertiesDir}/keystore.properties")
+if (!keystorePropertiesDir.isDirectory()) keystorePropertiesDir.mkdir()
+if (!keystorePropertiesFile.isFile()) keystorePropertiesFile.createNewFile()
+def keystoreProperties = new Properties()
+keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+
 android {
     namespace applicationId
     compileSdk 33
@@ -16,13 +23,35 @@ android {
 
         buildConfigField("String[]", "PRODUCT_IDS", productIds)
 
+        // RuStore
+        buildConfigField("String", "RUSTORE_APP_ID", "\"$ruStoreAppId\"")
+        // Deeplink scheme
+        buildConfigField("String", "DEEPLINK_RU_STORE", "\"$ruStoreDeeplink\"")
+
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
-
+    signingConfigs {
+        releaseRuStore {
+            storeFile file("${rootDir}/config/keystore")
+            storePassword keystoreProperties['storePassword']
+            keyAlias keystoreProperties['keyAlias']
+            keyPassword keystoreProperties['keyPassword']
+        }
+    }
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        releaseRuStore {
+            initWith release
+            matchingFallbacks = ['release']
+            signingConfig signingConfigs.releaseRuStore
+        }
+        debugRuStore {
+            initWith debug
+            matchingFallbacks = ['debug']
+            signingConfig signingConfigs.releaseRuStore
         }
     }
     compileOptions {
