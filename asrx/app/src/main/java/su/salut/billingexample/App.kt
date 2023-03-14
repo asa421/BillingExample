@@ -18,7 +18,6 @@ import su.salut.billingexample.repository.BillingRepositoryImpl
 import su.salut.billingexample.repository.SettingsRepositoryImpl
 import su.salut.billingexample.repository.storage.BillingStorage
 
-@Suppress("SpellCheckingInspection")
 class App : Application() {
 
     private val settingsRepository: SettingsRepository by lazy(LazyThreadSafetyMode.NONE) {

@@ -4,15 +4,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingHorizontal="@dimen/activity_horizontal_margin"
-    tools:context="su.salut.billingexample.ui.settings.SettingsFragment">
+    android:layout_height="wrap_content"
+    tools:context="su.salut.billingexample.ui.products.ProductItemAdapterBinder">
 
     <TextView
-        android:id="@+id/text_application_id"
+        android:id="@+id/text_id"
         android:layout_width="@dimen/spacing_zero"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/activity_vertical_margin"
         android:textAlignment="textStart"
         android:textSize="@dimen/font_large"
         tools:text="@string/text_id"
@@ -22,27 +20,24 @@
         app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
-        android:id="@+id/text_product_ids"
+        android:id="@+id/text_price"
         android:layout_width="@dimen/spacing_zero"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/activity_vertical_margin"
         android:textAlignment="textStart"
         android:textSize="@dimen/font_large"
-        android:text="@string/text_product_ids"
+        tools:text="@string/text_price"
 
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/text_application_id"
+        app:layout_constraintTop_toBottomOf="@id/text_id"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <ListView
-        android:id="@+id/list_view_product_ids"
-        android:layout_width="@dimen/spacing_zero"
-        android:layout_height="@dimen/spacing_zero"
-        tools:listitem="@android:layout/simple_list_item_1"
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_make_purchase"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_make_purchase"
 
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/text_product_ids"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/text_price" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

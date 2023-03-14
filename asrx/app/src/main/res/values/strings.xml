@@ -4,6 +4,8 @@
     <string name="title_products">Products</string>
     <string name="title_purchases">Purchases</string>
 
-    <string name="text_application_id"><![CDATA[Id: <b>%1$s</b>]]></string>
+    <string name="text_id"><![CDATA[Id: <b>%1$s</b>]]></string>
+    <string name="text_price"><![CDATA[Price: <b>%1$s</b>]]></string>
     <string name="text_product_ids">Product ids:</string>
+    <string name="text_make_purchase">Make a purchase</string>
 </resources>

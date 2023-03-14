@@ -1,12 +1,12 @@
 package su.salut.billingexample.ui.settings
 
-import android.os.Build
 import android.os.Bundle
 import android.text.Html
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import android.widget.BaseAdapter
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import su.salut.billingexample.R
@@ -22,6 +22,15 @@ class SettingsFragment : Fragment() {
     // onDestroyView.
     private val binding get() = _binding!!
 
+    private val productIds: MutableList<String> = mutableListOf()
+    private val adapter: BaseAdapter by lazy(LazyThreadSafetyMode.NONE) {
+        return@lazy ArrayAdapter(
+            requireContext(),
+            android.R.layout.simple_list_item_1,
+            productIds
+        )
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -34,23 +43,21 @@ class SettingsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        binding.listViewProductIds.adapter = adapter
+
         settingsViewModel.applicationId.observe(viewLifecycleOwner, ::updateApplicationId)
         settingsViewModel.productIds.observe(viewLifecycleOwner, ::updateProductIds)
     }
 
     private fun updateApplicationId(value: String) {
-        val textApplicationId = getString(R.string.text_application_id, value)
-
-        @Suppress("DEPRECATION")
-        binding.textApplicationId.text = when {
-            Build.VERSION.SDK_INT < Build.VERSION_CODES.N -> Html.fromHtml(textApplicationId)
-            else -> Html.fromHtml(textApplicationId, Html.FROM_HTML_MODE_LEGACY)
-        }
+        val id = getString(R.string.text_id, value)
+        binding.textApplicationId.text = Html.fromHtml(id, Html.FROM_HTML_MODE_LEGACY)
     }
 
     private fun updateProductIds(value: List<String>) {
-        val adapter = ArrayAdapter(requireContext(), android.R.layout.simple_list_item_1, value)
-        binding.listViewProductIds.adapter = adapter
+        productIds.clear()
+        productIds.addAll(value)
+        adapter.notifyDataSetChanged()
     }
 
     override fun onDestroyView() {

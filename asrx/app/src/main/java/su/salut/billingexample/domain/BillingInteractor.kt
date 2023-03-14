@@ -9,7 +9,6 @@ import su.salut.billingexample.domain.models.Purchase
 import su.salut.billingexample.domain.models.PurchasesProduct
 import su.salut.billingexample.domain.repository.BillingRepository
 
-@Suppress("SpellCheckingInspection")
 class BillingInteractor(private val billingRepository: BillingRepository) {
 
     fun getPurchasesProductsAsObservable(
