@@ -12,7 +12,7 @@
         android:layout_width="@dimen/spacing_zero"
         android:layout_height="wrap_content"
         android:textAlignment="textStart"
-        android:textSize="@dimen/font_large"
+        android:textSize="@dimen/font_small"
         tools:text="@string/text_id"
 
         app:layout_constraintStart_toStartOf="parent"
@@ -31,13 +31,78 @@
         app:layout_constraintTop_toBottomOf="@id/text_id"
         app:layout_constraintEnd_toEndOf="parent" />
 
+    <TextView
+        android:id="@+id/text_purchased"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingVertical="@dimen/border"
+        android:paddingHorizontal="@dimen/spacing_tiny"
+        android:background="@drawable/bg_border"
+        android:text="@string/text_purchased"
+        android:textSize="@dimen/font_tiny"
+        android:textStyle="bold"
+        tools:ignore="VisualLintOverlap" />
+
+    <TextView
+        android:id="@+id/text_pending"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingVertical="@dimen/border"
+        android:paddingHorizontal="@dimen/spacing_tiny"
+        android:background="@drawable/bg_border"
+        android:text="@string/text_pending"
+        android:textSize="@dimen/font_tiny"
+        android:textStyle="bold"
+        tools:ignore="VisualLintOverlap" />
+
+    <TextView
+        android:id="@+id/text_acknowledge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingVertical="@dimen/border"
+        android:paddingHorizontal="@dimen/spacing_tiny"
+        android:background="@drawable/bg_border"
+        android:text="@string/text_acknowledge"
+        android:textSize="@dimen/font_tiny"
+        android:textStyle="bold"
+        tools:ignore="VisualLintOverlap" />
+
+    <androidx.constraintlayout.helper.widget.Flow
+        android:id="@+id/flow_settings"
+        android:layout_width="@dimen/spacing_zero"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/spacing_small"
+
+        app:flow_wrapMode="chain"
+        app:flow_horizontalStyle="packed"
+        app:flow_horizontalBias="0"
+        app:flow_verticalBias="0"
+        app:flow_verticalGap="@dimen/spacing_small"
+        app:flow_horizontalGap="@dimen/spacing_small"
+        app:constraint_referenced_ids="text_purchased,text_pending,text_acknowledge"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_price"
+        app:layout_constraintEnd_toEndOf="parent" />
+
     <com.google.android.material.button.MaterialButton
         android:id="@+id/button_make_purchase"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textAllCaps="false"
         android:text="@string/text_make_purchase"
 
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/text_price" />
+        app:layout_constraintTop_toBottomOf="@id/flow_settings" />
+
+    <View
+        android:layout_width="@dimen/spacing_zero"
+        android:layout_height="@dimen/border"
+        android:layout_marginHorizontal="@dimen/activity_horizontal_margin"
+        android:background="?attr/colorControlNormal"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/button_make_purchase"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -25,12 +25,19 @@ class ProductItemAdapterBinder(
     }
 
     override fun onBindViewHolder(holder: ProductHolder, item: PurchasesProduct) {
-        val id = holder.binding.root.context.getString(R.string.text_id, item.product.productId)
-        val price = holder.binding.root.context.getString(R.string.text_price, item.product.priceLabel)
+        val context = holder.binding.root.context
+        val id = context.getString(R.string.text_id, item.product.productId)
+        val price = context.getString(R.string.text_price, item.product.priceLabel)
 
         holder.binding.textId.text = Html.fromHtml(id, Html.FROM_HTML_MODE_LEGACY)
         holder.binding.textPrice.text = Html.fromHtml(price, Html.FROM_HTML_MODE_LEGACY)
+
+        holder.binding.textPurchased.isEnabled = item.isPurchased
+        holder.binding.textPending.isEnabled = item.isPending
+        holder.binding.textAcknowledge.isEnabled = !item.isAcknowledged
+
         holder.binding.buttonMakePurchase.tag = item
+        holder.binding.buttonMakePurchase.isEnabled = item.purchases.isEmpty()
     }
 
     override fun onClick(v: View?) {

@@ -43,10 +43,13 @@ class BillingInteractor(private val billingRepository: BillingRepository) {
             val purchasesProduct = purchases.filter { it.productIds.contains(product.productId) }
             val isPurchased = purchasesProduct.any { it.isPurchased }
             val isPending = !isPurchased && purchasesProduct.any { it.isPending }
+            val isAcknowledged =
+                purchasesProduct.isEmpty() || purchasesProduct.any { it.isAcknowledged }
 
             return@map PurchasesProduct(
                 isPurchased = isPurchased,
                 isPending = isPending,
+                isAcknowledged = isAcknowledged,
                 product = product,
                 purchases = purchasesProduct
             )

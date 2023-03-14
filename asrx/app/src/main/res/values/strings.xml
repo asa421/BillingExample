@@ -8,4 +8,7 @@
     <string name="text_price"><![CDATA[Price: <b>%1$s</b>]]></string>
     <string name="text_product_ids">Product ids:</string>
     <string name="text_make_purchase">Make a purchase</string>
+    <string name="text_purchased">Purchased</string>
+    <string name="text_pending">Pending</string>
+    <string name="text_acknowledge">Acknowledge</string>
 </resources>
