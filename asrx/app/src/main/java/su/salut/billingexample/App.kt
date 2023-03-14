@@ -2,6 +2,8 @@ package su.salut.billingexample
 
 import android.app.Application
 import android.content.Context
+import android.util.Log
+import io.reactivex.rxjava3.plugins.RxJavaPlugins
 import su.salut.billingexample.data.GoogleBillingStorage
 import su.salut.billingexample.data.RuStoreBillingStorage
 import su.salut.billingexample.data.extensions.OnLaunchBillingFlow
@@ -46,6 +48,11 @@ class App : Application() {
             consoleApplicationId = BuildConfig.RUSTORE_APP_ID,
             deeplinkScheme = BuildConfig.DEEPLINK_RU_STORE
         )
+
+        // RxJava2 UndeliverableException
+        // https://proandroiddev.com/rxjava2-undeliverableexception-f01d19d18048
+        // https://github.com/ReactiveX/RxJava/wiki/What's-different-in-2.0#error-handling
+        RxJavaPlugins.setErrorHandler { Log.e(TAG, it.message, it) }
     }
 
     fun factoryGetApplicationIdUseCase(): GetApplicationIdUseCase {
@@ -77,5 +84,9 @@ class App : Application() {
             .rustore.BillingClientWrapperImpl(billingFactory)
 
         return RuStoreBillingStorage(billingClientWrapper)
+    }
+
+    companion object {
+        private const val TAG = "AR-AR"
     }
 }
