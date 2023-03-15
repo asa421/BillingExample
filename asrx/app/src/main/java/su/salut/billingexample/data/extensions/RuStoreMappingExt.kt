@@ -59,15 +59,6 @@ fun List<ru.rustore.sdk.billingclient.model.purchase.Purchase>.mapToAppPurchases
     return map(products::mapToAppPurchase)
 }
 
-fun ru.rustore.sdk.billingclient.model.product.Product.mapToAppPurchase(
-    purchases: List<ru.rustore.sdk.billingclient.model.purchase.Purchase>
-): List<Purchase> {
-    return when (val purchase = purchases.firstOrNull { it.productId == productId }) {
-        null -> emptyList()
-        else -> listOf(mapToAppPurchase(purchase))
-    }
-}
-
 private fun mapProductToAppProduct(
     product: ru.rustore.sdk.billingclient.model.product.Product
 ): Product {

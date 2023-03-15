@@ -5,7 +5,7 @@ plugins {
 
 def keystorePropertiesDir = rootProject.file("${rootDir}/config")
 def keystorePropertiesFile = rootProject.file("${keystorePropertiesDir}/keystore.properties")
-if (!keystorePropertiesDir.isDirectory()) keystorePropertiesDir.mkdir()
+if (!keystorePropertiesDir.isDirectory()) keystorePropertiesDir.mkdirs()
 if (!keystorePropertiesFile.isFile()) keystorePropertiesFile.createNewFile()
 def keystoreProperties = new Properties()
 keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
