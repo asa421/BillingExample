@@ -10,5 +10,6 @@
     <string name="text_make_purchase">Make a purchase</string>
     <string name="text_purchased">Purchased</string>
     <string name="text_pending">Pending</string>
+    <string name="text_trial_period">Trial period</string>
     <string name="text_acknowledge">Acknowledge</string>
 </resources>

@@ -43,9 +43,7 @@ class ProductsFragment : Fragment() {
         (binding.recyclerViewProducts.itemAnimator as? SimpleItemAnimator)
             ?.supportsChangeAnimations = false
 
-
-
-        productsViewModel.purchasesProduct.observe(viewLifecycleOwner, adapter::applyUpdatesFrom)
+        productsViewModel.products.observe(viewLifecycleOwner, adapter::applyUpdatesFrom)
     }
 
     override fun onDestroyView() {

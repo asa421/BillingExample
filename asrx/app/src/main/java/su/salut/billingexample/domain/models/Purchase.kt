@@ -8,7 +8,7 @@ interface Purchase {
     /** The product Ids */
     val productIds: List<String>
 
-    /** Indicates if urchased. */
+    /** Indicates if purchased. */
     val isPurchased: Boolean
 
     /** Indicates if pending. */

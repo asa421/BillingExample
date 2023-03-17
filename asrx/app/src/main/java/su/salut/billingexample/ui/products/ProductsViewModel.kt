@@ -21,15 +21,15 @@ class ProductsViewModel(
 ) : BaseViewModel() {
 
     private val productIds = getProductIdsUseCase.execute()
-    private val _purchasesProduct = MutableLiveData<ProductItemDiffListUpdates>()
+    private val _products = MutableLiveData<ProductItemDiffListUpdates>()
 
-    val purchasesProduct: LiveData<ProductItemDiffListUpdates> = _purchasesProduct
+    val products: LiveData<ProductItemDiffListUpdates> = _products
 
     init {
-        downloadProducts()
+        subscribeToProductsAsObservable()
     }
 
-    private fun downloadProducts() {
+    private fun subscribeToProductsAsObservable() {
         val observer = object : Observer<ProductItemDiffListUpdates> {
             override fun onSubscribe(d: Disposable) {
 
@@ -44,7 +44,7 @@ class ProductsViewModel(
             }
 
             override fun onNext(t: ProductItemDiffListUpdates) {
-                _purchasesProduct.value = t
+                _products.value = t
             }
         }
 
