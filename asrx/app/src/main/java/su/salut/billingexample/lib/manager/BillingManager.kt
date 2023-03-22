@@ -5,7 +5,7 @@ import android.content.Intent
 import androidx.annotation.RequiresPermission
 import com.android.billingclient.api.SkuDetails
 import io.reactivex.rxjava3.core.Completable
-import su.salut.billingexample.domain.models.BillingException
+import su.salut.billingexample.application.domain.models.BillingException
 import su.salut.billingexample.lib.googleplay.BillingClientWrapper
 import su.salut.billingexample.lib.rustore.RuStoreBillingFactoryImpl
 import kotlin.properties.Delegates

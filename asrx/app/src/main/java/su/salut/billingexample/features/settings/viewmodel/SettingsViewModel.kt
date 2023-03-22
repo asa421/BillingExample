@@ -6,9 +6,9 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
-import su.salut.billingexample.App
-import su.salut.billingexample.domain.usecase.GetApplicationIdUseCase
-import su.salut.billingexample.domain.usecase.GetProductIdsUseCase
+import su.salut.billingexample.application.App
+import su.salut.billingexample.application.domain.usecase.GetApplicationIdUseCase
+import su.salut.billingexample.application.domain.usecase.GetProductIdsUseCase
 
 class SettingsViewModel(
     private val getProductIdsUseCase: GetProductIdsUseCase,

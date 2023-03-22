@@ -8,10 +8,10 @@ import androidx.lifecycle.viewmodel.viewModelFactory
 import io.reactivex.rxjava3.core.Observer
 import io.reactivex.rxjava3.disposables.Disposable
 import io.reactivex.rxjava3.internal.observers.EmptyCompletableObserver
-import su.salut.billingexample.App
-import su.salut.billingexample.domain.BillingInteractor
-import su.salut.billingexample.domain.models.PurchasesProduct
-import su.salut.billingexample.domain.usecase.GetProductIdsUseCase
+import su.salut.billingexample.application.App
+import su.salut.billingexample.application.domain.BillingInteractor
+import su.salut.billingexample.application.domain.models.PurchasesProduct
+import su.salut.billingexample.application.domain.usecase.GetProductIdsUseCase
 import su.salut.billingexample.lib.viewmodel.BaseViewModel
 import su.salut.billingexample.features.products.view.adapter.ProductItemAdapterBinder.ProductItemDiffListUpdates
 

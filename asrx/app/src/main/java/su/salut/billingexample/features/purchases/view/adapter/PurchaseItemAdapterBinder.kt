@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import su.salut.billingexample.R
 import su.salut.billingexample.databinding.ViewPurchaseItemBinding
-import su.salut.billingexample.domain.models.Purchase
+import su.salut.billingexample.application.domain.models.Purchase
 import su.salut.billingexample.lib.recyclerview.BaseAdapterBinder
 import su.salut.billingexample.lib.recyclerview.DiffListUpdates
 
