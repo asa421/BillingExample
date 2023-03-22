@@ -6,9 +6,9 @@ import io.reactivex.rxjava3.core.Completable
 import io.reactivex.rxjava3.core.Single
 import ru.rustore.sdk.billingclient.model.product.Product
 import ru.rustore.sdk.billingclient.model.purchase.Purchase
-import su.salut.billingexample.lib.rustore.BillingClientWrapper
-import su.salut.billingexample.lib.rustore.IsOkPaymentResult
-import su.salut.billingexample.lib.rustore.IsOkResponse
+import su.salut.billingexample.extensions.lib.rustore.BillingClientWrapper
+import su.salut.billingexample.extensions.lib.rustore.IsOkPaymentResult
+import su.salut.billingexample.extensions.lib.rustore.IsOkResponse
 
 class BillingClientWrapperImplForTesting: BillingClientWrapper {
 

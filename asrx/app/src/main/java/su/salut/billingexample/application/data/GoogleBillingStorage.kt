@@ -12,8 +12,8 @@ import su.salut.billingexample.application.domain.models.BillingResult
 import su.salut.billingexample.application.domain.models.Product
 import su.salut.billingexample.application.domain.models.Purchase
 import su.salut.billingexample.application.repository.storage.BillingStorage
-import su.salut.billingexample.lib.googleplay.BillingClientWrapper
-import su.salut.billingexample.lib.googleplay.mapToException
+import su.salut.billingexample.extensions.lib.googleplay.BillingClientWrapper
+import su.salut.billingexample.extensions.lib.googleplay.mapToException
 
 /**
  * We work with the Google billing system.

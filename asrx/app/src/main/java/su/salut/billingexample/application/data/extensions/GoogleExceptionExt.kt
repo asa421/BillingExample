@@ -3,7 +3,7 @@ package su.salut.billingexample.application.data.extensions
 import com.android.billingclient.api.BillingClient.BillingResponseCode
 import su.salut.billingexample.application.domain.models.BillingException
 import su.salut.billingexample.application.domain.models.BillingResultCode
-import su.salut.billingexample.lib.googleplay.BillingResultException
+import su.salut.billingexample.extensions.lib.googleplay.BillingResultException
 
 /** Convert response to exception. */
 fun Throwable.mapGoogleToBillingException(): BillingException {

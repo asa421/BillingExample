@@ -1,4 +1,4 @@
-package su.salut.billingexample.lib.rustore
+package su.salut.billingexample.extensions.lib.rustore
 
 import android.app.Application
 import android.content.Intent

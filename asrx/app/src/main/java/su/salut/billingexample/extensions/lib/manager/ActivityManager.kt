@@ -1,4 +1,4 @@
-package su.salut.billingexample.lib.manager
+package su.salut.billingexample.extensions.lib.manager
 
 import android.app.Activity
 import android.app.Application

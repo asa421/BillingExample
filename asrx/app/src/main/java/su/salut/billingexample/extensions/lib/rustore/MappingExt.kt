@@ -1,16 +1,16 @@
-package su.salut.billingexample.lib.rustore
+package su.salut.billingexample.extensions.lib.rustore
 
 import ru.rustore.sdk.billingclient.model.common.ResponseWithCode
 import ru.rustore.sdk.billingclient.model.purchase.PaymentFinishCode
 import ru.rustore.sdk.billingclient.model.purchase.PaymentResult
-import su.salut.billingexample.lib.rustore.ResponseCode.Companion.PAYMENT_RESULT_CLOSED_BY_USER
-import su.salut.billingexample.lib.rustore.ResponseCode.Companion.PAYMENT_RESULT_DECLINED_BY_SERVER
-import su.salut.billingexample.lib.rustore.ResponseCode.Companion.PAYMENT_RESULT_INVALID_INVOICE
-import su.salut.billingexample.lib.rustore.ResponseCode.Companion.PAYMENT_RESULT_INVALID_PAYMENT_STATE
-import su.salut.billingexample.lib.rustore.ResponseCode.Companion.PAYMENT_RESULT_INVALID_PURCHASE
-import su.salut.billingexample.lib.rustore.ResponseCode.Companion.PAYMENT_RESULT_INVOICE_RESULT
-import su.salut.billingexample.lib.rustore.ResponseCode.Companion.PAYMENT_RESULT_PURCHASE_RESULT
-import su.salut.billingexample.lib.rustore.ResponseCode.Companion.PAYMENT_RESULT_TIMEOUT
+import su.salut.billingexample.extensions.lib.rustore.ResponseCode.Companion.PAYMENT_RESULT_CLOSED_BY_USER
+import su.salut.billingexample.extensions.lib.rustore.ResponseCode.Companion.PAYMENT_RESULT_DECLINED_BY_SERVER
+import su.salut.billingexample.extensions.lib.rustore.ResponseCode.Companion.PAYMENT_RESULT_INVALID_INVOICE
+import su.salut.billingexample.extensions.lib.rustore.ResponseCode.Companion.PAYMENT_RESULT_INVALID_PAYMENT_STATE
+import su.salut.billingexample.extensions.lib.rustore.ResponseCode.Companion.PAYMENT_RESULT_INVALID_PURCHASE
+import su.salut.billingexample.extensions.lib.rustore.ResponseCode.Companion.PAYMENT_RESULT_INVOICE_RESULT
+import su.salut.billingexample.extensions.lib.rustore.ResponseCode.Companion.PAYMENT_RESULT_PURCHASE_RESULT
+import su.salut.billingexample.extensions.lib.rustore.ResponseCode.Companion.PAYMENT_RESULT_TIMEOUT
 
 typealias IsOkResponse = (ResponseWithCode) -> Boolean
 typealias IsOkPaymentResult = (PaymentResult) -> Boolean

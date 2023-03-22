@@ -8,8 +8,8 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.SimpleItemAnimator
 import su.salut.billingexample.databinding.FragmentPurchasesBinding
-import su.salut.billingexample.lib.recyclerview.BaseMarginItemDecoration
-import su.salut.billingexample.lib.recyclerview.applyUpdatesFrom
+import su.salut.billingexample.extensions.android.recyclerview.BaseMarginItemDecoration
+import su.salut.billingexample.extensions.android.recyclerview.applyUpdatesFrom
 import su.salut.billingexample.features.purchases.view.adapter.PurchaseItemAdapterBinder
 import su.salut.billingexample.features.purchases.viewmodel.PurchasesViewModel
 

@@ -13,13 +13,14 @@ import su.salut.billingexample.application.domain.repository.BillingRepository
 import su.salut.billingexample.application.domain.repository.SettingsRepository
 import su.salut.billingexample.application.domain.usecase.GetApplicationIdUseCase
 import su.salut.billingexample.application.domain.usecase.GetProductIdsUseCase
-import su.salut.billingexample.lib.googleplay.GoogleBillingFactoryImpl
-import su.salut.billingexample.lib.manager.BillingManager
-import su.salut.billingexample.lib.manager.BillingManager.Companion.launchBillingFlow
-import su.salut.billingexample.lib.rustore.RuStoreBillingFactoryImpl
+import su.salut.billingexample.extensions.lib.googleplay.GoogleBillingFactoryImpl
+import su.salut.billingexample.extensions.lib.manager.BillingManager
+import su.salut.billingexample.extensions.lib.manager.BillingManager.Companion.launchBillingFlow
+import su.salut.billingexample.extensions.lib.rustore.RuStoreBillingFactoryImpl
 import su.salut.billingexample.application.repository.BillingRepositoryImpl
 import su.salut.billingexample.application.repository.SettingsRepositoryImpl
 import su.salut.billingexample.application.repository.storage.BillingStorage
+import su.salut.billingexample.extensions.lib.googleplay.BillingClientWrapperImpl
 
 class App : Application() {
 
@@ -70,8 +71,7 @@ class App : Application() {
 
     private fun factoryGoogleBillingStorage(context: Context): BillingStorage {
         val billingFactory = GoogleBillingFactoryImpl(context)
-        val billingClientWrapper = su.salut.billingexample.lib
-            .googleplay.BillingClientWrapperImpl(billingFactory)
+        val billingClientWrapper = BillingClientWrapperImpl(billingFactory)
         val onLaunchBillingFlow: OnLaunchBillingFlow = { billingClient, skuDetails ->
             billingClient.launchBillingFlow(skuDetails)
         }
@@ -81,8 +81,10 @@ class App : Application() {
 
     private fun factoryRuStoreBillingStorage(): BillingStorage {
         val billingFactory = RuStoreBillingFactoryImpl()
-        val billingClientWrapper = su.salut.billingexample.lib
-            .rustore.BillingClientWrapperImpl(billingFactory)
+        val billingClientWrapper =
+            su.salut.billingexample.extensions.lib.rustore.BillingClientWrapperImpl(
+                billingFactory
+            )
 
         return RuStoreBillingStorage(billingClientWrapper)
     }

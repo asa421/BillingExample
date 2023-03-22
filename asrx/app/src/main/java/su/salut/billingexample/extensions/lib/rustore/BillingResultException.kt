@@ -1,4 +1,4 @@
-package su.salut.billingexample.lib.rustore
+package su.salut.billingexample.extensions.lib.rustore
 
 import ru.rustore.sdk.billingclient.model.common.ResponseWithCode
 import ru.rustore.sdk.billingclient.model.purchase.PaymentFinishCode

@@ -2,6 +2,7 @@ package su.salut.billingexample.lib.rustore
 
 import org.junit.Before
 import org.junit.Test
+import su.salut.billingexample.extensions.lib.rustore.BillingClientWrapperWithCaching
 import su.salut.billingexample.lib.rustore.fortesting.BillingClientWrapperImplForTesting
 import su.salut.billingexample.lib.rustore.fortesting.EntitiesFactory
 

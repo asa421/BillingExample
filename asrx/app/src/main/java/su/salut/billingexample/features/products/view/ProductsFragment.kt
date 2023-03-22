@@ -10,8 +10,8 @@ import androidx.recyclerview.widget.SimpleItemAnimator
 import su.salut.billingexample.databinding.FragmentProductsBinding
 import su.salut.billingexample.features.products.view.adapter.ProductItemAdapterBinder
 import su.salut.billingexample.features.products.viewmodel.ProductsViewModel
-import su.salut.billingexample.lib.recyclerview.BaseMarginItemDecoration
-import su.salut.billingexample.lib.recyclerview.applyUpdatesFrom
+import su.salut.billingexample.extensions.android.recyclerview.BaseMarginItemDecoration
+import su.salut.billingexample.extensions.android.recyclerview.applyUpdatesFrom
 
 class ProductsFragment : Fragment() {
 

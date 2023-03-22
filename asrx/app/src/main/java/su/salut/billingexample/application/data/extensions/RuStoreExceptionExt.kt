@@ -2,8 +2,8 @@ package su.salut.billingexample.application.data.extensions
 
 import su.salut.billingexample.application.domain.models.BillingException
 import su.salut.billingexample.application.domain.models.BillingResultCode
-import su.salut.billingexample.lib.rustore.BillingResultException
-import su.salut.billingexample.lib.rustore.ResponseCode
+import su.salut.billingexample.extensions.lib.rustore.BillingResultException
+import su.salut.billingexample.extensions.lib.rustore.ResponseCode
 import ru.rustore.sdk.core.exception.*
 
 /** Convert response to exception. */

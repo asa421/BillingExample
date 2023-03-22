@@ -15,9 +15,9 @@ import su.salut.billingexample.application.domain.models.BillingResult
 import su.salut.billingexample.application.domain.models.Product
 import su.salut.billingexample.application.domain.models.Purchase
 import su.salut.billingexample.application.repository.storage.BillingStorage
-import su.salut.billingexample.lib.rustore.BillingClientWrapper
-import su.salut.billingexample.lib.rustore.BillingClientWrapperWithCaching
-import su.salut.billingexample.lib.rustore.BillingClientWrapperWithPurchaseListener
+import su.salut.billingexample.extensions.lib.rustore.BillingClientWrapper
+import su.salut.billingexample.extensions.lib.rustore.BillingClientWrapperWithCaching
+import su.salut.billingexample.extensions.lib.rustore.BillingClientWrapperWithPurchaseListener
 
 /**
  * We work with the RuStore billing system.

@@ -1,4 +1,4 @@
-package su.salut.billingexample.lib.viewmodel
+package su.salut.billingexample.extensions.android.viewmodel
 
 import androidx.lifecycle.ViewModel
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers

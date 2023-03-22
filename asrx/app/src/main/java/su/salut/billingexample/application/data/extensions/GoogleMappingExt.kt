@@ -7,7 +7,7 @@ import su.salut.billingexample.application.data.models.GoogleProduct
 import su.salut.billingexample.application.data.models.GooglePurchase
 import su.salut.billingexample.application.domain.models.Product
 import su.salut.billingexample.application.domain.models.Purchase
-import su.salut.billingexample.lib.googleplay.BillingClientWrapper
+import su.salut.billingexample.extensions.lib.googleplay.BillingClientWrapper
 import java.time.Duration
 import java.time.format.DateTimeParseException
 
@@ -26,7 +26,7 @@ private val SkuDetails.freeTrialPeriodInSeconds: Long
 
             else -> try {
                 @Suppress("DEPRECATION")
-                su.salut.billingexample.lib.time.Duration.parse(freeTrialPeriod)
+                su.salut.billingexample.extensions.android.time.Duration.parse(freeTrialPeriod)
             } catch (_: RuntimeException) {
                 0
             }

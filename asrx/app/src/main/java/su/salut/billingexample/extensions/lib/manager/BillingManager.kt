@@ -1,4 +1,4 @@
-package su.salut.billingexample.lib.manager
+package su.salut.billingexample.extensions.lib.manager
 
 import android.app.Application
 import android.content.Intent
@@ -6,8 +6,8 @@ import androidx.annotation.RequiresPermission
 import com.android.billingclient.api.SkuDetails
 import io.reactivex.rxjava3.core.Completable
 import su.salut.billingexample.application.domain.models.BillingException
-import su.salut.billingexample.lib.googleplay.BillingClientWrapper
-import su.salut.billingexample.lib.rustore.RuStoreBillingFactoryImpl
+import su.salut.billingexample.extensions.lib.googleplay.BillingClientWrapper
+import su.salut.billingexample.extensions.lib.rustore.RuStoreBillingFactoryImpl
 import kotlin.properties.Delegates
 
 /**
@@ -28,7 +28,7 @@ class BillingManager {
             consoleApplicationId: String,
             deeplinkScheme: String
         ) {
-            this.isRuStore = isRuStore
+            Companion.isRuStore = isRuStore
 
             when (isRuStore) {
                 true -> RuStoreBillingFactoryImpl.init(

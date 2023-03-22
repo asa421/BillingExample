@@ -8,8 +8,8 @@ import androidx.recyclerview.widget.RecyclerView
 import su.salut.billingexample.R
 import su.salut.billingexample.databinding.ViewPurchaseItemBinding
 import su.salut.billingexample.application.domain.models.Purchase
-import su.salut.billingexample.lib.recyclerview.BaseAdapterBinder
-import su.salut.billingexample.lib.recyclerview.DiffListUpdates
+import su.salut.billingexample.extensions.android.recyclerview.BaseAdapterBinder
+import su.salut.billingexample.extensions.android.recyclerview.DiffListUpdates
 
 class PurchaseItemAdapterBinder(
     private val onClick: (Purchase) -> Unit

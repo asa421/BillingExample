@@ -12,7 +12,7 @@ import androidx.navigation.ui.setupWithNavController
 import su.salut.billingexample.features.main.viewmodel.MainViewModel
 import su.salut.billingexample.R
 import su.salut.billingexample.databinding.ActivityMainBinding
-import su.salut.billingexample.lib.manager.BillingManager
+import su.salut.billingexample.extensions.lib.manager.BillingManager
 
 class MainActivity : AppCompatActivity() {
 

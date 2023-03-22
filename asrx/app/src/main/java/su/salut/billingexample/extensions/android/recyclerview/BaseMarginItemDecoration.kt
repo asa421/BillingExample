@@ -1,4 +1,4 @@
-package su.salut.billingexample.lib.recyclerview
+package su.salut.billingexample.extensions.android.recyclerview
 
 import android.graphics.Rect
 import android.view.View

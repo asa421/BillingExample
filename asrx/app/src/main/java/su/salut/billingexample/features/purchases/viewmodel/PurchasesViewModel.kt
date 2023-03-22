@@ -11,7 +11,7 @@ import io.reactivex.rxjava3.internal.observers.EmptyCompletableObserver
 import su.salut.billingexample.application.App
 import su.salut.billingexample.application.domain.BillingInteractor
 import su.salut.billingexample.application.domain.models.Purchase
-import su.salut.billingexample.lib.viewmodel.BaseViewModel
+import su.salut.billingexample.extensions.android.viewmodel.BaseViewModel
 import su.salut.billingexample.features.purchases.view.adapter.PurchaseItemAdapterBinder.PurchaseItemDiffListUpdates
 
 class PurchasesViewModel(

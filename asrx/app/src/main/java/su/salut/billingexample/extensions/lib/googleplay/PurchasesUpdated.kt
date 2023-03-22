@@ -1,4 +1,4 @@
-package su.salut.billingexample.lib.googleplay
+package su.salut.billingexample.extensions.lib.googleplay
 
 import com.android.billingclient.api.BillingResult
 import com.android.billingclient.api.Purchase

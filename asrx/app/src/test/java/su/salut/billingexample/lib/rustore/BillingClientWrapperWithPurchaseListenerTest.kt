@@ -2,6 +2,7 @@ package su.salut.billingexample.lib.rustore
 
 import io.reactivex.rxjava3.core.Completable
 import org.junit.Test
+import su.salut.billingexample.extensions.lib.rustore.BillingClientWrapperWithPurchaseListener
 import su.salut.billingexample.lib.rustore.fortesting.BillingClientWrapperImplForTesting
 import su.salut.billingexample.lib.rustore.fortesting.EntitiesFactory
 

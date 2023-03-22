@@ -7,7 +7,7 @@ import io.reactivex.rxjava3.internal.observers.EmptyCompletableObserver
 import io.reactivex.rxjava3.subjects.BehaviorSubject
 import su.salut.billingexample.application.App
 import su.salut.billingexample.application.domain.BillingInteractor
-import su.salut.billingexample.lib.viewmodel.BaseViewModel
+import su.salut.billingexample.extensions.android.viewmodel.BaseViewModel
 import java.util.concurrent.TimeUnit
 
 @Suppress("SpellCheckingInspection")

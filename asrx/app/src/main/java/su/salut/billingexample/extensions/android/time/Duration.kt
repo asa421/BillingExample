@@ -1,4 +1,4 @@
-package su.salut.billingexample.lib.time
+package su.salut.billingexample.extensions.android.time
 
 import java.util.*
 import java.util.regex.Matcher

@@ -1,4 +1,4 @@
-package su.salut.billingexample.lib.recyclerview
+package su.salut.billingexample.extensions.android.recyclerview
 
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView

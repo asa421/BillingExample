@@ -12,7 +12,7 @@ import su.salut.billingexample.application.App
 import su.salut.billingexample.application.domain.BillingInteractor
 import su.salut.billingexample.application.domain.models.PurchasesProduct
 import su.salut.billingexample.application.domain.usecase.GetProductIdsUseCase
-import su.salut.billingexample.lib.viewmodel.BaseViewModel
+import su.salut.billingexample.extensions.android.viewmodel.BaseViewModel
 import su.salut.billingexample.features.products.view.adapter.ProductItemAdapterBinder.ProductItemDiffListUpdates
 
 class ProductsViewModel(

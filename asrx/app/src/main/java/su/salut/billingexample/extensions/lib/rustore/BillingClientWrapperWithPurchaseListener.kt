@@ -1,4 +1,4 @@
-package su.salut.billingexample.lib.rustore
+package su.salut.billingexample.extensions.lib.rustore
 
 import io.reactivex.rxjava3.core.Completable
 import io.reactivex.rxjava3.core.Observable

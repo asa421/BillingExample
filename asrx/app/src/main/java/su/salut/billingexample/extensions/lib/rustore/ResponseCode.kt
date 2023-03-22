@@ -1,4 +1,4 @@
-package su.salut.billingexample.lib.rustore
+package su.salut.billingexample.extensions.lib.rustore
 
 /**
  * @link https://help.rustore.ru/rustore/for_developers/developer-documentation/sdk_payments/SDK-connecting-payments/Error_Codes
