@@ -1,4 +1,4 @@
-package su.salut.billingexample.ui.settings
+package su.salut.billingexample.features.settings.viewmodel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

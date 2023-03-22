@@ -13,4 +13,4 @@
     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
     tools:listitem="@layout/view_purchase_item"
     tools:itemCount="3"
-    tools:context="su.salut.billingexample.ui.purchases.PurchasesFragment" />
+    tools:context="su.salut.billingexample.features.purchases.view.PurchasesFragment" />

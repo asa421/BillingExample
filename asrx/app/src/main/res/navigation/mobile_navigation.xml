@@ -7,19 +7,19 @@
 
     <fragment
         android:id="@+id/navigation_settings"
-        android:name="su.salut.billingexample.ui.settings.SettingsFragment"
+        android:name="su.salut.billingexample.features.settings.view.SettingsFragment"
         android:label="@string/title_settings"
         tools:layout="@layout/fragment_settings" />
 
     <fragment
         android:id="@+id/navigation_products"
-        android:name="su.salut.billingexample.ui.products.ProductsFragment"
+        android:name="su.salut.billingexample.features.products.view.ProductsFragment"
         android:label="@string/title_products"
         tools:layout="@layout/fragment_products" />
 
     <fragment
         android:id="@+id/navigation_purchases"
-        android:name="su.salut.billingexample.ui.purchases.PurchasesFragment"
+        android:name="su.salut.billingexample.features.purchases.view.PurchasesFragment"
         android:label="@string/title_purchases"
         tools:layout="@layout/fragment_purchases" />
 </navigation>

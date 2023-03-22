@@ -1,4 +1,4 @@
-package su.salut.billingexample.ui.products
+package su.salut.billingexample.features.products.view.adapter
 
 import android.text.Html
 import android.view.LayoutInflater

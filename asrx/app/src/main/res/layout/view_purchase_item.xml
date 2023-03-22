@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    tools:context="su.salut.billingexample.ui.purchases.PurchaseItemAdapterBinder">
+    tools:context="su.salut.billingexample.features.purchases.view.adapter.PurchaseItemAdapterBinder">
 
     <TextView
         android:id="@+id/text_id"

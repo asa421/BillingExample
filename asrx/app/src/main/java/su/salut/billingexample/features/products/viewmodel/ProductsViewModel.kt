@@ -1,4 +1,4 @@
-package su.salut.billingexample.ui.products
+package su.salut.billingexample.features.products.viewmodel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -13,7 +13,7 @@ import su.salut.billingexample.domain.BillingInteractor
 import su.salut.billingexample.domain.models.PurchasesProduct
 import su.salut.billingexample.domain.usecase.GetProductIdsUseCase
 import su.salut.billingexample.lib.viewmodel.BaseViewModel
-import su.salut.billingexample.ui.products.ProductItemAdapterBinder.ProductItemDiffListUpdates
+import su.salut.billingexample.features.products.view.adapter.ProductItemAdapterBinder.ProductItemDiffListUpdates
 
 class ProductsViewModel(
     private val billingInteractor: BillingInteractor,

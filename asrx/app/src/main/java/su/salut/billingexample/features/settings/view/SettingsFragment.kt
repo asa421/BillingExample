@@ -1,4 +1,4 @@
-package su.salut.billingexample.ui.settings
+package su.salut.billingexample.features.settings.view
 
 import android.os.Bundle
 import android.text.Html
@@ -11,6 +11,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import su.salut.billingexample.R
 import su.salut.billingexample.databinding.FragmentSettingsBinding
+import su.salut.billingexample.features.settings.viewmodel.SettingsViewModel
 
 class SettingsFragment : Fragment() {
 
