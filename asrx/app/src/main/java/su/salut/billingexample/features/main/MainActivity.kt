@@ -1,4 +1,4 @@
-package su.salut.billingexample
+package su.salut.billingexample.features.main
 
 import android.content.Intent
 import android.os.Bundle
@@ -9,6 +9,8 @@ import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import su.salut.billingexample.features.main.viewmodel.MainViewModel
+import su.salut.billingexample.R
 import su.salut.billingexample.databinding.ActivityMainBinding
 import su.salut.billingexample.lib.manager.BillingManager
 

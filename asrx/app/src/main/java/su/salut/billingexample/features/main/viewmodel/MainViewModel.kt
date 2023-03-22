@@ -1,10 +1,11 @@
-package su.salut.billingexample
+package su.salut.billingexample.features.main.viewmodel
 
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
 import io.reactivex.rxjava3.internal.observers.EmptyCompletableObserver
 import io.reactivex.rxjava3.subjects.BehaviorSubject
+import su.salut.billingexample.App
 import su.salut.billingexample.domain.BillingInteractor
 import su.salut.billingexample.lib.viewmodel.BaseViewModel
 import java.util.concurrent.TimeUnit
