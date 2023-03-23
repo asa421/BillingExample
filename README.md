@@ -6,7 +6,7 @@
 
 ## ImplementationExample:
  - Implementation example with **RxJava** [here asrx](../main/asrx)! <img src="https://reactivex.io/favicon.ico" title="RxJava" alt="RxJava" width="14" height="14"/>
- - Implementation example with **Coroutine&Flow** [here asflow](../main/asflow)! <img src="https://kotlinlang.org/assets/images/favicon.ico?v2" title="Coroutine and Flow" alt="Coroutine and Flow" width="14" height="14"/>
+ - Implementation example with **Coroutine&Flow** [here asflow](../main/asflow)! <img src="https://kotlinlang.org/assets/images/favicon.ico?v2" title="Coroutine and Flow" alt="Coroutine and Flow" width="14" height="14"/> (Sorry, still under development.)
  
  ## :hammer_and_wrench: Project Diagram:
  ![alt text][diagram]
