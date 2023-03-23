@@ -12,7 +12,7 @@ internal class BillingClientWrapperWithPurchaseListenerTest {
     private val purchaseId = "Test purchase id"
 
     private val factory = EntitiesFactory()
-    private val returnPurchase1 = factory.generatePurchase()
+    private val returnPurchase1 = factory.generatePurchase(purchaseId = purchaseId)
     private val returnPurchase2 = factory.generatePurchase(productId = productId)
 
     private val throwable = Throwable("Testing the returned error")
@@ -58,7 +58,11 @@ internal class BillingClientWrapperWithPurchaseListenerTest {
     @Test
     fun `checking the confirm of the purchase`() {
         // arrange
-        testBillingClient.reset(returnCompletable = Completable.complete())
+        val listPurchases1 = listOf(returnPurchase1, returnPurchase2)
+        testBillingClient.reset(
+            returnPurchases = listOf(listPurchases1, listPurchases1),
+            returnCompletable = Completable.complete()
+        )
 
         // act
         val testObserver = testPurchaseListener.getPurchasesUpdatedAsObservable().test()
@@ -70,7 +74,7 @@ internal class BillingClientWrapperWithPurchaseListenerTest {
             .assertComplete()
         testObserver // assert answer
             .assertValueCount(1)
-            .assertValue(emptyList())
+            .assertValue(listOf(returnPurchase1))
     }
 
     @Test

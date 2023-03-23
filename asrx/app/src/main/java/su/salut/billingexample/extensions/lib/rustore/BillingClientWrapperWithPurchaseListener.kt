@@ -72,7 +72,10 @@ class BillingClientWrapperWithPurchaseListener(
         isOkResponse: IsOkResponse
     ): Completable {
         return billingClientWrapper.confirmPurchaseAsCompletable(purchaseId, isOkResponse)
-            .doOnComplete { purchasesUpdatedBySubject.onNext(emptyList()) }
+            // Tracking purchases in purchasesUpdatedBySubject
+            .andThen(Completable.fromSingle(reloadPurchasesUpdatedAsSingle { purchase ->
+                purchase.purchaseId == purchaseId
+            }))
     }
 
     /**
@@ -87,7 +90,9 @@ class BillingClientWrapperWithPurchaseListener(
         return billingClientWrapper.purchaseProductAsCompletable(productId, isOkPaymentResult)
             .doOnError { purchasesUpdatedBySubject.onNext(emptyList()) }
             // Tracking purchases in purchasesUpdatedBySubject
-            .andThen(Completable.fromSingle(reloadPurchasesUpdatedAsSingle(productId)))
+            .andThen(Completable.fromSingle(reloadPurchasesUpdatedAsSingle { purchase ->
+                purchase.productId == productId
+            }))
     }
 
     /**
@@ -111,9 +116,11 @@ class BillingClientWrapperWithPurchaseListener(
         return billingClientWrapper.getProductsAsSingle(productIds, isOkResponse)
     }
 
-    private fun reloadPurchasesUpdatedAsSingle(productId: String): Single<List<Purchase>> {
+    private fun reloadPurchasesUpdatedAsSingle(
+        filterPurchase: (Purchase) -> Boolean
+    ): Single<List<Purchase>> {
         return getPurchasesAsSingle(::isOkResponse)
-            .map { purchases -> purchases.filter { it.productId == productId } }
+            .map { purchases -> purchases.filter(filterPurchase) }
             .doAfterSuccess(purchasesUpdatedBySubject::onNext)
     }
 }
